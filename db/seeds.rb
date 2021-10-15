@@ -43,8 +43,8 @@ guillaume.groups << g2
 
 
 # Students
-sakura1_students = s1.students.create([{name: "Kairen"}, {name: "Kazuma"}, {name: "Shouma"}, {name: "Momo"}, {name: "Hana"}])
-akkun = s1.students.create(name: "Akkun")
+sakura1_students = s1.students.create([{first_name: "Kairen"}, {first_name: "Kazuma"}, {first_name: "Shouma"}, {first_name: "Momo"}, {first_name: "Hana"}])
+akkun = s1.students.create(first_name: "Akkun")
 
 kairen_class = Group.where(name: "Sakura1").first
 kairen_class.students << sakura1_students
@@ -62,10 +62,10 @@ sakura1_students[0].addresses.create(city: "Osaka")
 
 
 # Contacts
-contact_guillaume = Contact.create(name: "Guillaume")
-contact_richards = Contact.create(name: "Richard's")
-contact_sunny = Contact.create(name: "Sunny")
-contact_lily = Contact.create(name: "Lily")
+contact_guillaume = Contact.create(first_name: "Guillaume")
+contact_richards = Contact.create(first_name: "Richard's")
+contact_sunny = Contact.create(first_name: "Sunny")
+contact_lily = Contact.create(first_name: "Lily")
 lily.contacts << [contact_guillaume, contact_sunny]
 guillaume.contacts << [contact_lily, contact_richards]
 sakura1_students[0].contacts << [contact_guillaume, contact_lily]
