@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  last_name: MyString
+  first_name: MyString
+  birth_date: 2021-10-15
+  contract_type: MyString
+  position: MyString
+  visa_status: MyString
+  visa_expiration: 2021-10-15
+
+two:
+  last_name: MyString
+  first_name: MyString
+  birth_date: 2021-10-15
+  contract_type: MyString
+  position: MyString
+  visa_status: MyString
+  visa_expiration: 2021-10-15

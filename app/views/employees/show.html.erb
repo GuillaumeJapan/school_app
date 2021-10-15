@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @employee.last_name %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @employee.first_name %>
+</p>
+
+<p>
+  <strong>Birth date:</strong>
+  <%= @employee.birth_date %>
+</p>
+
+<p>
+  <strong>Contract type:</strong>
+  <%= @employee.contract_type %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @employee.position %>
+</p>
+
+<p>
+  <strong>Visa status:</strong>
+  <%= @employee.visa_status %>
+</p>
+
+<p>
+  <strong>Visa expiration:</strong>
+  <%= @employee.visa_expiration %>
+</p>
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Back', employees_path %>

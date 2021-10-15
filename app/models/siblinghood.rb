@@ -1,0 +1,2 @@
+class Siblinghood < ApplicationRecord
+end
