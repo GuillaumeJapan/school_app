@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student: one
+  school_name: MyString
+  group_name: MyString
+  start_date: 2021-10-15
+  end_date: 2021-10-15
+
+two:
+  student: two
+  school_name: MyString
+  group_name: MyString
+  start_date: 2021-10-15
+  end_date: 2021-10-15
