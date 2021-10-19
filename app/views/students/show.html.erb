@@ -40,16 +40,29 @@
   <%= @student.note %>
 </p>
 
-<% if @allergies.any? %>
-  <strong>List of allergies:</strong>
-  <ul>
-    <% @allergies.each do |allergy| %>
-      <li><%= allergy.food %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <strong>No allergies</strong>
-<% end %>
+<p>
+  <% if @allergies.any? %>
+    <strong>List of allergies:</strong>
+    <ul>
+      <% @allergies.each do |allergy| %>
+        <li><%= allergy.food %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <strong>No allergies</strong>
+  <% end %>
+</p>
+
+<p>
+  <% if @siblings.any? %>
+    <strong><%= pluralize(@siblings.count, "Sibling") %></strong>
+    <ul>
+      <% @siblings.each do |sibling| %>
+        <li><%= sibling.first_name %> <%= sibling.group.name %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</p>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>

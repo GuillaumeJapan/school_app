@@ -12,6 +12,10 @@ class Student < ApplicationRecord
 
   after_destroy :check_alone_sibling
 
+  def get_siblings
+    siblinghood ? siblinghood.students.excluding(self) : Student.none
+  end
+
   private
 
     # After destroying a student, check if a sibling is left alone in the siblinghood 
@@ -19,5 +23,6 @@ class Student < ApplicationRecord
     def check_alone_sibling
       self.siblinghood.destroy if self.siblinghood && self.siblinghood.students.count == 1
     end
+
 
 end
