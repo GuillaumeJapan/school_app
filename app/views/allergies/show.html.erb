@@ -5,5 +5,14 @@
   <%= @allergy.food %>
 </p>
 
+<p>
+  <strong>List of students allergic to: <%= @allergy.food %></strong>
+  <ul>
+    <% @allergic_students.each do |student| %>
+      <li><%= student.first_name %> <%= student.last_name %> <%= student.group.name %></li>
+    <% end %>
+  </ul>
+</p>
+
 <%= link_to 'Edit', edit_allergy_path(@allergy) %> |
 <%= link_to 'Back', allergies_path %>

@@ -7,8 +7,10 @@ class Student < ApplicationRecord
   has_and_belongs_to_many :contacts
   has_and_belongs_to_many :allergies
 
-  after_destroy :check_alone_sibling
+  # By default, sort students by group and name 
+  default_scope { includes(:group).order("groups.name", :first_name) }  
 
+  after_destroy :check_alone_sibling
 
   private
 

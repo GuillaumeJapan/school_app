@@ -40,5 +40,16 @@
   <%= @student.note %>
 </p>
 
+<% if @allergies.any? %>
+  <strong>List of allergies:</strong>
+  <ul>
+    <% @allergies.each do |allergy| %>
+      <li><%= allergy.food %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <strong>No allergies</strong>
+<% end %>
+
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>
