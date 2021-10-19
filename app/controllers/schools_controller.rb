@@ -13,6 +13,7 @@ class SchoolsController < ApplicationController
   # GET /schools/new
   def new
     @school = School.new
+    @school.addresses.build
   end
 
   # GET /schools/1/edit
@@ -64,6 +65,6 @@ class SchoolsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def school_params
-      params.require(:school).permit(:name)
+      params.require(:school).permit(:name, addresses_attributes: [:addressable_id, :id, :label, :country, :zip_code, :prefecture, :city, :addr1, :addr2])
     end
 end

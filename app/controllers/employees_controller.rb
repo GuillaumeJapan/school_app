@@ -13,6 +13,7 @@ class EmployeesController < ApplicationController
   # GET /employees/new
   def new
     @employee = Employee.new
+    @employee.addresses.build
   end
 
   # GET /employees/1/edit
@@ -64,6 +65,8 @@ class EmployeesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def employee_params
-      params.require(:employee).permit(:last_name, :first_name, :birth_date, :contract_type, :position, :visa_status, :visa_expiration)
+      params.require(:employee).permit(:last_name, :first_name, :birth_date, 
+                                       :contract_type, :position, :visa_status, :visa_expiration,
+                                       addresses_attributes: [:addressable_id, :id, :label, :country, :zip_code, :prefecture, :city, :addr1, :addr2])
     end
 end
