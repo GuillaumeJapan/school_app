@@ -15,5 +15,14 @@
   <%= @group.grade %>
 </p>
 
+<p>
+  List of students:
+  <ul>
+    <% @students.each do |student| %>
+      <li><%= full_name(student) %></li>
+    <% end %>
+  </ul>
+</p>
+
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>

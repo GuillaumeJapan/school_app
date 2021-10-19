@@ -58,7 +58,7 @@
     <strong><%= pluralize(@siblings.count, "Sibling") %></strong>
     <ul>
       <% @siblings.each do |sibling| %>
-        <li><%= sibling.first_name %> <%= sibling.group.name %></li>
+        <li><%= full_name(sibling) %></li>
       <% end %>
     </ul>
   <% end %>
