@@ -8,6 +8,7 @@ class AllergiesController < ApplicationController
 
   # GET /allergies/1 or /allergies/1.json
   def show
+    @allergic_students = @allergy.students
   end
 
   # GET /allergies/new

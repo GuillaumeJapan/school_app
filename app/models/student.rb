@@ -8,8 +8,14 @@ class Student < ApplicationRecord
   has_and_belongs_to_many :contacts
   has_and_belongs_to_many :allergies
 
+  # By default, sort students by group and name 
+  default_scope { includes(:group).order("groups.name", :first_name) }  
+
   after_destroy :check_alone_sibling
 
+  def get_siblings
+    siblinghood ? siblinghood.students.excluding(self) : Student.none
+  end
 
   private
 
@@ -18,5 +24,6 @@ class Student < ApplicationRecord
     def check_alone_sibling
       self.siblinghood.destroy if self.siblinghood && self.siblinghood.students.count == 1
     end
+
 
 end
