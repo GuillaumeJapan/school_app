@@ -64,5 +64,21 @@
   <% end %>
 </p>
 
+<p>
+  <% if @historics.any? %>
+    <strong>Student historic</strong>
+    <ul>
+      <% @historics.each do |historic| %>
+        <li>
+          School: <%= historic.school_name %>
+          Group: <%= historic.group_name %>
+          From: <%= historic.start_date %>
+          To: <%= historic.end_date ? historic.end_date : "Current" %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>

@@ -10,6 +10,7 @@ class StudentsController < ApplicationController
   def show
     @allergies = @student.allergies
     @siblings = @student.get_siblings
+    @historics = @student.historics
   end
 
   # GET /students/new
