@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= link_to "Schools", schools_path %> | <%= link_to "Groups", groups_path %> | <%= link_to "Students", students_path %> |
-    <%= link_to "Employees", employees_path %> | <%= link_to "Contacts", contacts_path %> | 
-    <%= link_to "Allergies", allergies_path %>
+    <%= render "shared/navbar" %>
     <%= yield %>
   </body>
 </html>
