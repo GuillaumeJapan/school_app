@@ -48,44 +48,7 @@
 
   Addresses:
   <ul>
-    <%= form.fields_for :addresses do |addresses_form| %>
-      <li>
-        <div class="field">
-          <%= addresses_form.label :label %>
-          <%= addresses_form.text_field :label %>
-        </div>
-
-        <div class="field">
-          <%= addresses_form.label :country %>
-          <%= addresses_form.text_field :country %>
-        </div>
-
-        <div class="field">
-          <%= addresses_form.label :zip_code %>
-          <%= addresses_form.text_field :zip_code %>
-        </div>
-
-        <div class="field">
-          <%= addresses_form.label :prefecture %>
-          <%= addresses_form.text_field :prefecture %>
-        </div>
-
-        <div class="field">
-          <%= addresses_form.label :city %>
-          <%= addresses_form.text_field :city %>
-        </div>
-
-        <div class="field">
-          <%= addresses_form.label :addr1 %>
-          <%= addresses_form.text_field :addr1 %>
-        </div>
-
-        <div class="field">
-          <%= addresses_form.label :addr2 %>
-          <%= addresses_form.text_area :addr2 %>
-        </div>
-      </li>
-    <% end %>
+    <%= render 'addresses/form', form: form %>
   </ul>
 
   <div class="actions">
